@@ -9,10 +9,6 @@ petsCatalogApp.config(function ($routeProvider, $locationProvider) {
         .when('/user/:id', {
             templateUrl: '../Scripts/app/pets.html',
             controller: 'PetsListController'
-        })
-        .otherwise({
-            templateUrl: 'Scripts/app/index.html',
-            controller: 'UsersListController'
         });
     $locationProvider.html5Mode({
         enabled: true,

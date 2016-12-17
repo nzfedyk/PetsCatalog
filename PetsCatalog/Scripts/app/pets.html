@@ -1,10 +1,10 @@
 ﻿<div>
-    <h1>{{userName}}'s Pets</h1>
+    <h1>{{username}}'s Pets</h1>
     <a href="/">Back to all Users</a>
     <div ng-controller="PetAddController">
         <form ng-submit="addPet()">
             <div class="form-group">
-                <input name="name" type="text" class="form-control" placeholder="Enter Pet's name" ng-model="name" />
+                <input name="name" type="text" class="form-control" placeholder="Enter Pet's Name" ng-model="name" />
                 <button type="submit" class="btn btn-primary">Add</button>
             </div>
         </form>

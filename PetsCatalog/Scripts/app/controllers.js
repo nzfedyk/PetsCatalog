@@ -11,11 +11,13 @@
 
     var PetsListController = function ($scope, $http, $routeParams) { 
         $scope.userId = $routeParams.id;
-        for (var user in $scope.Users) {
-            if (user['Id'] == $scope.userId) {
-                $scope.userName = user['Name'];
-            }
-        }
+        
+        var getUserName = function () {
+            $http.get('http://localhost:54030/api/User/' + $scope.userId)
+                .then(function (response) {
+                    $scope.username = response.data.Name;
+                });
+        };
 
         var getPets = function () {
             $http.get('http://localhost:54030/api/Pet/' + $scope.userId)
@@ -23,6 +25,8 @@
                     $scope.Pets = response.data;
                 });
         };
+
+        getUserName();
         getPets();
     };
 
